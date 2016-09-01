@@ -1,0 +1,17 @@
+{
+    "name": "Office-Add-in-Auth0",
+    "version": "1.0.0",
+    "author": "MAX Office Add-ins Team",
+    "description": "Package and tasks for the AuthO Office Add-in",
+    "scripts": {
+        "start": "npm run lite",
+        "lite": "lite-server -c bs-config.json"
+    },
+    "license": "MIT",
+    "dependencies": {       
+    },
+    "devDependencies": {
+        "lite-server": "^2.2.0"
+    },
+    "repository": {}
+}
