@@ -1,4 +1,4 @@
-# Office Add-in that uses the AuthO Service to Simplify Social Login
+# Office Add-in that uses the Auth0 Service to Simplify Social Login
 
 The Auth0 service simplifies the process of using social login provided by online services such as Facebook, Google, and Microsoft. This sample shows how to use Auth0 in an Office add-in. 
 
