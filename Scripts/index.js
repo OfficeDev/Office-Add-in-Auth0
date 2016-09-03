@@ -1,7 +1,7 @@
-﻿// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in the root of the repo.
+// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in the root of the repo.
 
-/* 
-    This file provides the functionality for the main task pane page. 
+/*
+    This file provides the functionality for the welcome task pane page.
 */
 
 /// <reference path="./App.js" />
@@ -31,18 +31,10 @@
             // Enable the buttons
             $(".popupButton").prop("disabled", false);
 
-            $("#facebookButton").click(function () {
-                showLoginPopup('facebook');
+            $("#signinButton").click(function () {
+                showLoginPopup();
             });
-
-            $("#googleButton").click(function () {
-                showLoginPopup('google-oauth2');
-            });
-
-            $("#msAccountButton").click(function () {
-                showLoginPopup('windowslive');
-            });
-        });       
+        });
     };
 
     // This handler responds to the success or failure message that the pop-up dialog receives from the identity provider.
@@ -51,38 +43,38 @@
 
         if (messageFromPopupDialog.outcome === "success") {
 
-            // The provider's ticket has been stored.
+            // The Auth0 token has been received, so close the dialog, use
+            // the token to get user information, and redirect the task
+            // pane to the landing page.
             dialog.close();
-            getUserData(messageFromPopupDialog.provider, messageFromPopupDialog.auth0Token);
+            getUserData(messageFromPopupDialog.auth0Token);
+            window.location.replace("/landing-page.html");
         } else {
-            
+
             // Something went wrong with authentication or the authorization of the web application,
             // either with Auth0 or with the provider.
             dialog.close();
-            app.showNotification("User authentication and application authorization", "Unable to successfully authenticate user or authorize application: " + messageFromPopupDialog.error);
+            app.showNotification("User authentication and application authorization",
+                                 "Unable to successfully authenticate user or authorize application: " + messageFromPopupDialog.error);
         }
     }
 
-    // Use the Office dialog API to open a pop-up and display the sign-in page for the identity provider.
-    function showLoginPopup(provider) {
-        
-        // Provider name needs to be shared between task pane and popup window.
-        localStorage.removeItem("provider");
-        localStorage.setItem("provider", provider);
+    // Use the Office dialog API to open a pop-up and display the sign-in page for choosing an identity provider.
+    function showLoginPopup() {
 
-        // Create the popup URL and open it.        
+        // Create the popup URL and open it.
         var fullUrl = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/popup.html';
 
         // height and width are percentages of the size of the screen.
         Office.context.ui.displayDialogAsync(fullUrl,
-                {height: 65, width: 40, requireHTTPS: true}, 
+                {height: 45, width: 55, requireHTTPS: true},
                 function (result) {
                     dialog = result.value;
                     dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, processMessage);
                 });
     }
 
-    function getUserData(provider, auth0AccessToken) {
+    function getUserData(auth0AccessToken) {
             try {
 
                 // Use the token to get Auth0's standard userinfo object.
@@ -90,7 +82,7 @@
                 var accessTokenParameter = '?access_token=' + auth0AccessToken;
 
                 $.get(userInfoEndPoint + accessTokenParameter,
-                    function (data) { insertDataInDocument(data); }
+                   function (data) { storeUserData(JSON.stringify(data)); }
                 );
             }
             catch(err) {
@@ -98,30 +90,10 @@
             }
     }
 
-    function insertDataInDocument(data) {
+    function storeUserData(data) {
 
-        var parsedData = getParsedData(data);
-        
-        Word.run(function (context) {
-
-            // Create a proxy object for the document body.
-            var body = context.document.body;
-
-            // Queue commands to insert text into the end of the Word document body.
-            body.insertText(parsedData, "End");
-
-            // Synchronize the document state by executing the queued commands, and 
-            // return a promise to indicate task completion.
-            return context.sync();
-        })
-        .catch(this.errorHandler);
-    }
-
-    function getParsedData(data) {
-
-            // Auth0 repackages the JSON data from different providers into
-            // a common JSON userinfo structure with consistent property names. 
-            // For example, Google's "displayName" becomes just "name".             
-            return data.name;
+        // Store the data so it can be retrieved by the landing page.
+        sessionStorage.removeItem('authOUserInfo');
+        sessionStorage.setItem('authOUserInfo', data);
     }
 }());

@@ -154,3 +154,29 @@ padding: 29px 20px; }
     margin-bottom: 0px;
     margin-right: 0px;
     padding-bottom: 20px; }
+
+.ms-socialSignInButton {
+  min-width: 210px;
+}
+
+.ms-facebookColor {
+  background-color: #3B5998;
+}
+
+.ms-googleColor {
+  background-color: #4285f4;
+}
+
+.ms-microsoftAccountColor {
+  background-color: #231F20;
+}
+
+.ms-buttonTextColor {
+  color: white;
+}
+
+.flex-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

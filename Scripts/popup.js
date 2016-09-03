@@ -8,21 +8,39 @@
     "use strict";
 
     try {
-        var provider = localStorage.getItem("provider");
 
         // Redirect to Auth0 and tell it which provider to use.
         var auth0AuthorizeEndPoint = 'https://' + localStorage.getItem('Auth0Subdomain') + '.auth0.com/authorize/';
 
-        window.location.replace(auth0AuthorizeEndPoint
-         + '?'
-         + 'response_type=token'
-         + '&client_id=' + localStorage.getItem('Auth0ClientID')
-         + '&redirect_uri=https://localhost:3000/popupRedirect.html'
-         + '&scope=openid'
-         + '&connection=' + provider);
+        $(document).ready(function () {
+            $("#facebookButton").click(function () {
+                console.log("facebook clicked" + auth0AuthorizeEndPoint);
+                redirectToIdentityProvider('facebook');
+            });
+
+            $("#googleButton").click(function () {
+                redirectToIdentityProvider('google-oauth2');
+            });
+
+            $("#msAccountButton").click(function () {
+                redirectToIdentityProvider('windowslive');
+            });
+        })
+
+        function redirectToIdentityProvider(provider) {
+
+            window.location.replace(auth0AuthorizeEndPoint
+                + '?'
+                + 'response_type=token'
+                + '&client_id=' + localStorage.getItem('Auth0ClientID')
+                + '&redirect_uri=https://localhost:3000/popupRedirect.html'
+                + '&scope=openid'
+                + '&connection=' + provider);
+        }
+
     }
     catch(err) {
         console.log(err.message);
     }
-}());   
+}());  
 

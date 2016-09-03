@@ -1,63 +1,88 @@
-﻿<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. -->
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. -->
 
 <!--
-    This file is main page of the add-in.
--->
+    This file shows how to design a first-run page that provides step-by-step instructions to the user about how
+    to use the add-in.
+    -->
 
 <!DOCTYPE html>
 <html>
-    <head lang="en">
-        <title>Auth with Auth0</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>Welcome Screen - Instruction Step Placemat</title>
 
-        <!-- For the Office UI Fabric, go to http://aka.ms/office-ui-fabric to learn more. -->
-        <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.min.css">
-        <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css">
+    <!-- For the Office UI Fabric, go to http://aka.ms/office-ui-fabric to learn more. -->
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.min.css">
+    <link rel="stylesheet" href="https://appsforoffice.microsoft.com/fabric/2.1.0/fabric.components.min.css">
 
-        <link rel="stylesheet" href="Styles/index.css">
+    <!-- Template styles -->
+    
+    <link href="Styles/instruction.step.css" rel="stylesheet" type="text/css" />
 
-        <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js"></script>
 
-        <!-- Load the Office JavaScript APIs -->
-        <script src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js" type="text/javascript"></script>
+    <!-- Load the Office JavaScript APIs -->
+    <script src="https://appsforoffice.microsoft.com/lib/beta/hosted/office.js" type="text/javascript"></script>
 
-        <script src="Scripts/app.js"></script>
-        <script src="Scripts/index.js"></script>       
-    </head>
-
-    <body class="ms-font-l">
-        <div class="ms-navigation__header">
-
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/index.js"></script>
+</head>
+<body class="ms-font-l">
+    <main class="ms-firstrun-instructionstep">
+        <section class="ms-firstrun-instructionstep__header">
+            <div class="ms-fontSize-xl ms-fontColor-themePrimary ">WELCOME</div>
+            <div class="ms-font-m ms-fontColor-themePrimary ms-fontWeight-light">
+                This add-in demonstrates how to use the Auth0 service to simplify social login.
+            </div>
+            <div class="ms-firstrun-instructionstep__header--image"></div>
+        </section>
+        <div class="ms-firstrun-instructionstep__welcome-body">
+            <p class="ms-font-xs ms-firstrun-instructionstep__welcome-intro">To use this add-in</p>
+            <ul class="ms-List ms-firstrun-instructionstep__list">
+                <li class="ms-ListItem">
+                    <span class="ms-ListItem-primaryText">1</span>
+                    <span class="ms-ListItem-secondaryText">
+                        <span class="ms-fontColor-themePrimary ">
+                            <span>Click the</span><span class="ms-fontWeight-semibold "> Sign In</span><span> button</span>
+                        </span>
+                    </span>
+                    <div class="clearfix"></div>
+                </li>
+                <li class="ms-ListItem">
+                    <span class="ms-ListItem-primaryText">2</span>
+                    <span class="ms-ListItem-secondaryText">
+                        <span class="ms-fontColor-themePrimary ">
+                            <span>On the popup that opens, click a button for one of the identity services.</span>
+                        </span>
+                    </span>
+                    <div class="clearfix"></div>
+                </li>
+                <li class="ms-ListItem">
+                    <span class="ms-ListItem-primaryText">3</span>
+                    <span class="ms-ListItem-secondaryText">
+                        <span class="ms-fontColor-themePrimary ">
+                            <span>If you are not already logged into the service, the service's sign in form opens in the popup.</span>
+                        </span>
+                    </span>
+                    <div class="clearfix"></div>
+                </li>
+                <li class="ms-ListItem">
+                    <span class="ms-ListItem-primaryText">4</span>
+                    <span class="ms-ListItem-secondaryText">
+                        <span class="ms-fontColor-themePrimary ">
+                            <span>After you login, the popup closes and the main working page of the add-in opens in the task pane.  Click the button to insert your name into the document.</span>
+                        </span>
+                    </span>
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+                <p align="center">
+                    <button id="signinButton" class="popupButton ms-Button ms-Button--primary"><span class="ms-Button-label">Sign In</span></button>
+                </p>
         </div>
 
-        <div class="ms-navigation__content">
-            <div class="ms-font-xl ms-navigation__content__title">Use Social Login</div>
-        </div>
-
-        <div class="ms-navigation__content">
-            <button id="facebookButton" disabled="true" class="popupButton ms-Button ms-Button--primary">
-                <span class="ms-Button-label">Get Facebook Name</span>
-            </button>
-        </div>
-
-        <div class="ms-navigation__content">
-            <button id="googleButton" disabled="true" class="popupButton ms-Button ms-Button--primary">
-                <span class="ms-Button-label">Get Google Name</span>
-            </button>
-        </div>
-
-        <div class="ms-navigation__content">
-            <button id="msAccountButton" disabled="true" class="popupButton ms-Button ms-Button--primary">
-                <span class="ms-Button-label">Get Microsoft Name</span>
-            </button>
-        </div>
-
-        <footer class="ms-landing-page__footer  ms-bgColor-themePrimary">
-            <div class="ms-landing-page__footer--left">
-                <img src="./assets/images/logo-filled.png" />
-                <h1 class="ms-font-xl ms-fontWeight-semilight ms-fontColor-white">Auth0 Authenticator</h1>
-            </div>    
-        </footer>
-    </body>
+    </main>
+</body>
 </html>
+

@@ -17,8 +17,7 @@
                 var accessTokenForAuth0 = getHashStringParameter('access_token');            
 
                 // Create the outcome message and send it to the task pane.
-                var provider = localStorage.getItem("provider");
-                var messageObject = {outcome: "success", provider: provider, auth0Token: accessTokenForAuth0};            
+                var messageObject = {outcome: "success", auth0Token: accessTokenForAuth0};            
                 var jsonMessage = JSON.stringify(messageObject);
 
                 // Tell the task pane about the outcome.

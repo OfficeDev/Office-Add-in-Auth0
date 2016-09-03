@@ -1,4 +1,4 @@
-﻿<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. -->
+<!-- Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in root of repo. -->
 
 <!--
     This file is the page that initially opens in the popup dialog and redirects
@@ -21,9 +21,26 @@
 
         <script src="Scripts/popup.js"></script>
     </head>
-     <body>
+     <body class="flex-body">
         <div class="ms-typeramp-dialog"> 
-            <p class="ms-font-m">If you are not logged in, a sign-on prompt will open shortly.</p> 
+            <p class="ms-navigation__content ms-font-xl">SIGN IN OPTIONS</p>
+            <div class="ms-navigation__content">
+                <button id="facebookButton" class="ms-socialSignInButton ms-Button ms-facebookColor">
+                    <span class="ms-buttonTextColor ms-Button-label">Facebook</span>
+                </button>
+            </div>
+
+            <div class="ms-navigation__content">
+                <button id="googleButton" class="ms-socialSignInButton ms-Button ms-googleColor">
+                    <span class="ms-buttonTextColor ms-Button-label">Google</span>
+                </button>
+            </div>
+
+            <div class="ms-navigation__content">
+                <button id="msAccountButton" class="ms-socialSignInButton ms-Button ms-microsoftAccountColor">
+                    <span class="ms-buttonTextColor">Microsoft</span>
+                </button>
+            </div>
         </div> 
     </body>
 </html>
