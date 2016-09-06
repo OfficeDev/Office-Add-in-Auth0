@@ -17,7 +17,7 @@ The Auth0 service simplifies the process of using social login provided by onlin
 
 ## Change History
 
-August 30, 2016:
+September 6, 2016:
 
 * Initial version.
 
@@ -106,11 +106,10 @@ Now you need to let Microsoft Word know where to find the add-in.
 
 ## Test the add-in
 
-1. Click the **Get Facebook Name** button.
-2. A popup will open and you will be prompted to sign in with with the provider (unless you already are).
-3. After you sign in the first time, you will be prompted to grant Auth0 permission to your profile.
-4. When the dialog closes, your user name is inserted into the Word document.
-4. Repeat the above steps with the **Get Google Name** button and then the **Get Microsoft Name**.
+1. The add-in opens with a Welcome page. Click the **Sign In** button.
+2. A popup will open and you are prompted to choose an identity provider. Click one of the buttons. 
+3. If you are not already signed in with that provider, the provider's sign-in page opens. (After you sign in the first time, you will be prompted to grant Auth0 permission to your profile.) After you are signed in, the dialog closes and the task pane shows the main working page of the add-in. (If you are already signed-in with the provider, the dialog closes immediately after you click the provider's button.)
+4. Click the **Insert User Name** button. The your user name is inserted into the Word document.
 
 ## Questions and comments
 
