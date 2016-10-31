@@ -1,7 +1,7 @@
-// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in the root of the repo.
+﻿// Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See full license in the root of the repo.
 
-/*
-    This file provides the functionality for the welcome task pane page.
+/* 
+    This file provides the functionality for the welcome task pane page. 
 */
 
 /// <reference path="./App.js" />
@@ -12,8 +12,8 @@
     var Auth0AccountData = Auth0AccountData || {};
 
     // Replace the placeholders in the next two lines.
-    Auth0AccountData.subdomain = '{Auth0 account subdomain}';
-    Auth0AccountData.clientID = '{Auth0 client ID}';
+    Auth0AccountData.subdomain = 'aardvark';
+    Auth0AccountData.clientID = 'o5KuHTiLdAoULQBVqScFBlzNZfU63OlO';
 
     // The Auth0 subdomain and client ID need to be shared with the popup dialog
     localStorage.setItem('Auth0Subdomain', Auth0AccountData.subdomain);
@@ -34,7 +34,7 @@
             $("#signinButton").click(function () {
                 showLoginPopup();
             });
-        });
+        });       
     };
 
     // This handler responds to the success or failure message that the pop-up dialog receives from the identity provider.
@@ -50,11 +50,11 @@
             getUserData(messageFromPopupDialog.auth0Token);
             window.location.replace("/landing-page.html");
         } else {
-
+            
             // Something went wrong with authentication or the authorization of the web application,
             // either with Auth0 or with the provider.
             dialog.close();
-            app.showNotification("User authentication and application authorization",
+            app.showNotification("User authentication and application authorization", 
                                  "Unable to successfully authenticate user or authorize application: " + messageFromPopupDialog.error);
         }
     }
@@ -62,12 +62,12 @@
     // Use the Office dialog API to open a pop-up and display the sign-in page for choosing an identity provider.
     function showLoginPopup() {
 
-        // Create the popup URL and open it.
+        // Create the popup URL and open it.        
         var fullUrl = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/popup.html';
 
         // height and width are percentages of the size of the screen.
         Office.context.ui.displayDialogAsync(fullUrl,
-                {height: 45, width: 55, requireHTTPS: true},
+                {height: 45, width: 55}, 
                 function (result) {
                     dialog = result.value;
                     dialog.addEventHandler(Microsoft.Office.WebExtension.EventType.DialogMessageReceived, processMessage);
