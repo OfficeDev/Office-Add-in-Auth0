@@ -1,34 +1,34 @@
-# Complemento de Office que usa el servicio de Auth0 para simplificar el inicio de sesión social
+# <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>Complemento de Office que usa el servicio de Auth0 para simplificar el inicio de sesión social
 
 El servicio de Auth0 simplifica el proceso de usar el inicio de sesión social que se proporciona mediante servicios en línea como Facebook, Google y Microsoft. En este ejemplo se muestra cómo usar Auth0 en un complemento de Office. 
 
-## Tabla de contenido
-* [Historial de cambios](#historial-de-cambios)
-* [Requisitos previos](#requisitos-previos)
-* [Configurar el proyecto](#configurar-el-proyecto)
-* [Crear una cuenta de Auth0 y configurarla para usar Facebook, Google y una cuenta de Microsoft](#crear-una-cuenta-de-auth0-y-configurarla-para-usar-facebook-google-y-una-cuenta-de-microsoft)
-* [Agregar los valores de la cuenta de Auth0 al código de ejemplo](#agregar-los-valores-de-la-cuenta-de-auth0-al-código-de-ejemplo)
-* [Implementar el complemento](#implementar-el-complemento)
-* [Ejecutar el proyecto](#ejecutar-el-proyecto)
-* [Iniciar el complemento](#iniciar-el-complemento)
-* [Probar el complemento](#probar-el-complemento)
-* [Preguntas y comentarios](#preguntas-y-comentarios)
-* [Recursos adicionales](#recursos-adicionales)
+## <a name="table-of-contents"></a>Tabla de contenido
+* [Historial de cambios](#change-history)
+* [Requisitos previos](#prerequisites)
+* [Configurar el proyecto](#configure-the-project)
+* [Crear una cuenta de Auth0 y configurarla para usar Facebook, Google y una cuenta de Microsoft](#create-an-auth0-account-and-configure-it-to-use-google,-facebook,-and-microsoft-account)
+* [Agregar los valores de la cuenta de Auth0 al código de ejemplo](#add-your-auth0-account-values-to-the-sample-code)
+* [Implementar el complemento](#deploy-the-add-in)
+* [Ejecutar el proyecto](#run-the-project)
+* [Iniciar el complemento](#start-the-add-in)
+* [Probar el complemento](#test-the-add-in)
+* [Preguntas y comentarios](#questions-and-comments)
+* [Recursos adicionales](#additional-resources)
 
-## Historial de cambios
+## <a name="change-history"></a>Historial de cambios
 
 6 de septiembre de 2016:
 
 * Versión inicial.
 
-## Requisitos previos
+## <a name="prerequisites"></a>Requisitos previos
 
 * Una cuenta con [Auth0](https://auth0.com)
 * Word 2016 para Windows, compilación 16.0.6727.1000 o posterior.
 * [Nodo y npm](https://nodejs.org/en/) El proyecto está configurado para usar npm como un administrador de paquetes y un ejecutador de tareas. También está configurado para usar Lite Server como el servidor web que hospedará el complemento durante el desarrollo, de forma que tenga el complemento en funcionamiento rápidamente. Puede usar otro ejecutador de tareas o servidor web.
 * [Git Bash](https://git-scm.com/downloads) (U otro cliente de Git).
 
-## Configurar el proyecto
+## <a name="configure-the-project"></a>Configurar el proyecto
 
 En la carpeta donde quiera colocar el proyecto, ejecute los siguientes comandos en el shell de Git Bash:
 
@@ -44,7 +44,7 @@ Establezca el certificado para que sea una entidad de certificación raíz de co
 4. Seleccione **Entidades de certificación raíz de confianza** y **Aceptar**. 
 5. Seleccione **Siguiente** y, después, **Finalizar**. 
 
-## Crear una cuenta de Auth0 y configurarla para usar Facebook, Google y una cuenta de Microsoft
+## <a name="create-an-auth0-account-and-configure-it-to-use-google-facebook-and-microsoft-account"></a>Crear una cuenta de Auth0 y configurarla para usar Facebook, Google y una cuenta de Microsoft
 
 Auth0 puede cambiar su interfaz de usuario, y la terminología, después de que se publique este archivo Léame. Hemos intentado realizar tan pocas suposiciones como fuera posible sobre la interfaz de usuario, pero si lo necesita, puede usar estos pasos para obtener la esencia principal de lo que necesita realizarse y, después, usar la ayuda de Auth0 para obtener instrucciones.
 
@@ -56,7 +56,7 @@ Auth0 puede cambiar su interfaz de usuario, y la terminología, después de que 
 6. En **Allowed Callbacks (Devoluciones de llamada permitidas)**, escriba `https://localhost:3000/popupRedirect.html`.
 7. Deje todas las demás opciones con sus valores predeterminados y haga clic en **Guardar cambios**.
 
-## Agregar los valores de la cuenta de Auth0 al código de ejemplo
+## <a name="add-your-auth0-account-values-to-the-sample-code"></a>Agregar los valores de la cuenta de Auth0 al código de ejemplo
 
 1. Abra el archivo index.js y busque las siguientes líneas cerca de la parte superior:
 ```
@@ -65,7 +65,7 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 ```
 2. Reemplace los marcadores de posición con las cadenas adecuadas que ha anotado en el procedimiento anterior.
 
-## Implementar el complemento
+## <a name="deploy-the-add-in"></a>Implementar el complemento
 
 Ahora debe indicarle a Microsoft Word dónde encontrar el complemento.
 
@@ -79,10 +79,10 @@ Ahora debe indicarle a Microsoft Word dónde encontrar el complemento.
 8. Active la casilla **Mostrar en el menú** y elija **Aceptar**.
 9. Aparecerá un mensaje para informarle de que la configuración se aplicará la próxima vez que inicie Microsoft Office. Cierre Word.
 
-## Ejecutar el proyecto
+## <a name="run-the-project"></a>Ejecutar el proyecto
 
 1. Abra una ventana Comandos de nodo en la carpeta del proyecto y ejecute ```npm start``` para iniciar el servicio web. Deje abierta la ventana Comandos.
-2. Abra Internet Explorer o Edge y escriba ```https://localhost:3000``` en el cuadro de dirección. Si no recibe ninguna advertencia sobre el certificado, cierre el explorador y siga con la sección siguiente titulada **Iniciar el complemento**. Si recibe una advertencia de que el certificado no es de confianza, siga estos pasos:
+2. Abra Internet Explorer o Edge y escriba ```https://localhost:3000``` en el cuadro de dirección. Si no recibe ninguna advertencia sobre el certificado, cierre el explorador y siga con la sección siguiente titulada **Iniciar el complemento**. Si se muestra una advertencia que indica que el certificado no es de confianza, siga estos pasos:
 3. El explorador le proporciona un vínculo para abrir la página a pesar de la advertencia. Ábralo.
 4. Después de que se abra la página, habrá un error de certificado rojo en la barra de direcciones. Haga doble clic en el error.
 5. Seleccione **Ver certificado**.
@@ -93,7 +93,7 @@ Ahora debe indicarle a Microsoft Word dónde encontrar el complemento.
 5. Seleccione **Siguiente** y, después, **Finalizar**.
 6. Cierre el explorador.
 
-## Iniciar el complemento
+## <a name="start-the-add-in"></a>Iniciar el complemento
 
 1. Reinicie Word y abra un documento de Word.
 2. En la pestaña **Insertar** de Word 2016, elija **Mis complementos**.
@@ -104,25 +104,29 @@ Ahora debe indicarle a Microsoft Word dónde encontrar el complemento.
 
  > Nota: El complemento se cargará en un panel de tareas si los comandos del complemento no son compatibles con su versión de Word.
 
-## Probar el complemento
+## <a name="test-the-add-in"></a>Probar el complemento
 
 1. El complemento se abre con una página de bienvenida. Haga clic en el botón **Iniciar sesión**.
 2. Se abrirá un elemento emergente y se le solicitará que elija un proveedor de identidad. Haga clic en uno de los botones. 
-3. Si todavía no ha iniciado sesión en ese proveedor, se abrirá la página de inicio de sesión del proveedor. (Después de que inicie sesión por primera vez, se le solicitará que conceda permiso a Auth0 a su perfil). Después de que inicie sesión, el cuadro de diálogo se cierra y el panel de tareas muestra la página de trabajo principal del complemento. (Si ya ha iniciado sesión en el proveedor, el cuadro de diálogo se cierra inmediatamente después de que haga clic en el botón del proveedor).
+3. Si todavía no ha iniciado sesión en ese proveedor, se abrirá la página de inicio de sesión del proveedor. (Después de que inicie sesión por primera vez, se le solicitará que conceda permiso a Auth0 a su perfil). Después de que inicie sesión, el cuadro de diálogo se cierra y el panel de tareas muestra la página de trabajo principal del complemento. Si ya ha iniciado sesión en el proveedor, el cuadro de diálogo se cerrará inmediatamente después de que haga clic en el botón del proveedor.
 4. Haga clic en el botón **Insertar nombre de usuario**. El nombre de usuario se inserta en el documento de Word.
 
-## Preguntas y comentarios
+## <a name="questions-and-comments"></a>Preguntas y comentarios
 
 Nos encantaría recibir sus comentarios sobre este ejemplo. Puede enviarnos comentarios a través de la sección *Problemas* de este repositorio.
 
 Las preguntas generales sobre el desarrollo de Microsoft Office 365 deben publicarse en [Desbordamiento de pila](http://stackoverflow.com/questions/tagged/office-js+API). Si su pregunta trata sobre las API de JavaScript para Office, asegúrese de que su pregunta se etiqueta con [office-js] y [API].
 
-## Recursos adicionales
+## <a name="additional-resources"></a>Recursos adicionales
 
-* [Documentación de complemento de Office](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
+* 
+  [Documentación de complementos de Office](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
 * [Centro de desarrollo de Office](http://dev.office.com/)
-* Puede obtener más ejemplos de complementos de Office en [OfficeDev en Github](https://github.com/officedev).
+* Más ejemplos de complementos de Office en [OfficeDev en GitHub](https://github.com/officedev)
 
-## Copyright
+## <a name="copyright"></a>Copyright
 Copyright (c) 2016 Microsoft Corporation. Todos los derechos reservados.
 
+
+
+Este proyecto ha adoptado el [Código de conducta de código abierto de Microsoft](https://opensource.microsoft.com/codeofconduct/). Para obtener más información, consulte las [preguntas más frecuentes sobre el Código de conducta](https://opensource.microsoft.com/codeofconduct/faq/) o póngase en contacto con [opencode@microsoft.com](mailto:opencode@microsoft.com) si tiene otras preguntas o comentarios.
