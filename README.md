@@ -96,7 +96,7 @@ Now you need to let Microsoft Word know where to find the add-in.
 ## Start the add-in
 
 1. Restart Word and open a Word document.
-2. On the **Insert** tab in Word 2016, choose **My Add-ins**.
+2. On the **Insert** tab in Word 2016, choose **My Add-ins**. (The button may be on the **Developer** tab instead of the **Insert** tab. To make the **Developer** tab visible, see [these instructions](https://support.office.com/en-us/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45).)
 3. Select the **SHARED FOLDER** tab.
 4. Choose **Authenticate with Auth0**, and then select **OK**.
 5. If add-in commands are supported by your version of Word, the UI will inform you that the add-in was loaded.
