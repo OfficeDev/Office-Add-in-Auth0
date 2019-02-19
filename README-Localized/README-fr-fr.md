@@ -1,6 +1,6 @@
 # <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>Complément Office qui utilise le service Auth0 pour simplifier la connexion sociale
 
-Le service Auth0 simplifie le processus d’utilisation de la connexion sociale fournie par les services en ligne tel que Facebook, Google et Microsoft. Cet exemple montre comment utiliser Auth0 dans un complément Office. 
+Le service Auth0 simplifie le processus d’utilisation de la connexion par le biais des réseaux sociaux fournie par les services en ligne tels que Facebook, Google et Microsoft. Cet exemple montre comment utiliser Auth0 dans un complément Office. 
 
 ## <a name="table-of-contents"></a>Sommaire
 * [Historique des modifications](#change-history)
@@ -24,7 +24,7 @@ Le service Auth0 simplifie le processus d’utilisation de la connexion sociale 
 ## <a name="prerequisites"></a>Conditions préalables
 
 * Un compte avec [Auth0](https://auth0.com)
-* Word 2016 pour Windows, build 16.0.6727.1000 ou ultérieur.
+* Word 2016 pour Windows, version 16.0.6727.1000 ou ultérieure.
 * [Nœud et npm](https://nodejs.org/en/) Le projet est configuré pour utiliser npm à la fois comme gestionnaire de package et exécuteur de tâches. Il est également configuré pour utiliser Lite Server comme serveur web hébergeant le complément lors du développement, afin que le complément soit rapidement opérationnel. N’hésitez pas à utiliser un autre exécuteur de tâches ou serveur web.
 * [GIT Bash](https://git-scm.com/downloads) (ou un autre client Git)
 
@@ -46,7 +46,7 @@ Définissez le certificat comme appartenant à une autorité racine approuvée. 
 
 ## <a name="create-an-auth0-account-and-configure-it-to-use-google-facebook-and-microsoft-account"></a>Créer un compte Auth0 et le configurer pour utiliser un compte Google, Facebook et Microsoft
 
-Il se peut que l’interface utilisateur et la terminologie d’Auth0 changent après la publication de ce fichier Lisez-moi. Nous nous sommes efforcés de limiter le nombre d’hypothèses sur l’interface utilisateur, mais si nécessaire, vous pouvez utiliser ces étapes pour avoir une idée générale de ce qu’il faut faire, puis utiliser l’aide d’Auth0 pour obtenir des instructions.
+Il se peut qu’Auth0 change son interface utilisateur et sa terminologie après la publication de ce fichier Lisez-moi. Nous nous sommes efforcés de limiter le nombre d’hypothèses sur l’interface utilisateur, mais s i nécessaire, vous pouvez utiliser ces étapes pour avoir une idée générale de ce qu’il faut faire, puis utiliser l’aide d’Auth0 pour obtenir des instructions.
 
 1. Dans votre tableau de bord Auth0, créez un compte (ou utilisez un compte existant). Vous serez invité à choisir un nom de compte qui servira de sous-domaine dans auth0.com, avec lequel votre complément pourra interagir ; par exemple, `officeaddin.auth0.com`. Notez ce nom.
 2. Quand vous êtes invité à choisir des fournisseurs, sélectionnez Facebook, Google et Microsoft. Cet exemple n’en utilise pas d’autres, vous pouvez donc désactiver les autres fournisseurs activés par défaut, y compris l’option **Base de données** (ou **Authentification nom d’utilisateur-mot de passe**). Vous pourrez modifier ce paramètre ultérieurement, si vous souhaitez étendre l’exemple à d’autres fournisseurs.
@@ -69,7 +69,7 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 
 Vous devez maintenant indiquer à Microsoft Word où trouver le complément.
 
-1. Créez un partage réseau, ou [partagez un dossier sur le réseau](https://technet.microsoft.com/en-us/library/cc770880.aspx).
+1. Créez un partage réseau, ou [partagez un dossier sur le réseau](https://technet.microsoft.com/fr-fr/library/cc770880.aspx).
 2. Placez une copie du fichier manifeste Office-Add-in-Auth0.xml, depuis la racine du projet, dans le dossier partagé.
 3. Lancez Word et ouvrez un document.
 4. Choisissez l’onglet **Fichier**, puis choisissez **Options**.
@@ -79,12 +79,12 @@ Vous devez maintenant indiquer à Microsoft Word où trouver le complément.
 8. Activez la case à cocher **Afficher dans le menu**, puis cliquez sur **OK**.
 9. Un message vous informe que vos paramètres seront appliqués lors du prochain démarrage de Microsoft Office. Fermez Word.
 
-## <a name="run-the-project"></a>Exécuter le projet
+## <a name="run-the-project"></a>Exécution du projet
 
 1. Ouvrez une fenêtre de commande de nœud dans le dossier du projet et exécutez ```npm start``` pour démarrer le service web. Laissez la fenêtre de commande ouverte.
-2. Ouvrez Internet Explorer ou Edge et tapez ```https://localhost:3000``` dans la zone d’adresse. Si vous ne recevez aucun avertissement concernant le certificat, fermez le navigateur et passez à la section suivante intitulée **Démarrer le complément**. Si vous recevez un message d’avertissement indiquant que le certificat n’est pas approuvé, passez aux étapes suivantes :
+2. Ouvrez Internet Explorer ou Edge, et saisissez ```https://localhost:3000``` dans la zone d’adresse. Si vous ne recevez aucun avertissement concernant le certificat, fermez le navigateur et passez à la section suivante intitulée **Démarrer le complément**. Si vous recevez un message d’avertissement indiquant que le certificat n’est pas approuvé, passez aux étapes suivantes :
 3. Le navigateur vous fournit un lien vous permettant d’ouvrir la page malgré l’avertissement. Ouvrez-la.
-4. Une fois la page ouverte, une erreur de certificat rouge sera indiquée dans la barre d’adresses. Double-cliquez sur l’erreur.
+4. Une fois la page ouverte, une erreur de certificat affichée en rouge apparaît dans la barre d’adresses. Double-cliquez sur l’erreur.
 5. Sélectionnez **Afficher le certificat**.
 5. Sélectionnez **Installer le certificat**.
 4. Sélectionnez **Ordinateur local** et choisissez **Suivant** pour continuer. 
@@ -96,13 +96,13 @@ Vous devez maintenant indiquer à Microsoft Word où trouver le complément.
 ## <a name="start-the-add-in"></a>Démarrer le complément
 
 1. Redémarrez Word et ouvrez un document Word.
-2. Dans l’onglet **Insertion** de Word 2016, choisissez **Mes compléments**.
+2. Dans l’onglet **Insertion** de Word 2016, choisissez **Mes compléments**. (Le bouton peut être sur l’onglet **Développeur** au lieu de l’onglet **Insertion**. Pour rendre l’onglet **Développeur** visible, suivez [ces instructions](https://support.office.com/fr-fr/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45).)
 3. Sélectionnez l’onglet **DOSSIER PARTAGÉ**.
 4. Choisissez **Authentifier avec Auth0**, puis sélectionnez **OK**.
 5. Si les commandes de complément sont prises en charge par votre version de Word, l’interface utilisateur vous informe que le complément a été chargé.
 6. Dans le ruban Accueil, un nouveau groupe appelé **Auth0** apparaît avec un bouton intitulé **Afficher** et une icône. Cliquez sur ce bouton pour ouvrir le complément.
 
- > Remarque : Le complément se charge dans un volet Office si les commandes de complément ne sont pas prises en charge par votre version de Word.
+ > Remarque : le complément se charge dans un volet Office si les commandes de complément ne sont pas prises en charge par votre version de Word.
 
 ## <a name="test-the-add-in"></a>Test du complément
 
@@ -115,17 +115,17 @@ Vous devez maintenant indiquer à Microsoft Word où trouver le complément.
 
 Nous serions ravis de connaître votre opinion sur cet exemple. Vous pouvez nous envoyer vos commentaires via la section *Problèmes* de ce référentiel.
 
-Les questions générales sur le développement de Microsoft Office 365 doivent être publiées sur [Stack Overflow](http://stackoverflow.com/questions/tagged/office-js+API). Si votre question concerne les API Office JavaScript, assurez-vous qu’elle est marquée avec les balises [office js] et [API].
+Les questions générales sur le développement de Microsoft Office 365 doivent être publiées sur [Stack Overflow](http://stackoverflow.com/questions/tagged/office-js+API). Si votre question concerne les API Office JavaScript, assurez-vous qu’elle comporte les balises [office-js] et [API].
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-* 
-  [Documentation de complément Office](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
+* 
+  [Documentation de complément Office](https://msdn.microsoft.com/fr-fr/library/office/jj220060.aspx)
 * [Centre de développement Office](http://dev.office.com/)
 * Plus d’exemples de complément Office sur [OfficeDev sur Github](https://github.com/officedev)
 
 ## <a name="copyright"></a>Copyright
-Copyright (c) 2016 Microsoft Corporation. Tous droits réservés.
+Copyright (c) 2016 Microsoft Corporation. Tous droits réservés.
 
 
 

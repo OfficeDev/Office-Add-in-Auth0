@@ -1,6 +1,6 @@
 # <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>Office-Add-In, das den Dienst Auth0 zur vereinfachten Anmeldung an sozialen Netzwerken verwendet
 
-Der Dienst Auth0 vereinfacht die Anmeldung an sozialen Netzwerken, die von Onlinediensten wie Facebook, Google und Microsoft bereitgestellt wird. Dieses Beispiel zeigt die Verwendung von Auth0 in einem Office-Add-In. 
+Der Dienst Auth0 vereinfacht die Anmeldung über soziale Netzwerke, die von Onlinediensten wie Facebook, Google und Microsoft bereitgestellt wird. Dieses Beispiel zeigt die Verwendung von Auth0 in einem Office-Add-In. 
 
 ## <a name="table-of-contents"></a>Inhalt
 * [Änderungsverlauf](#change-history)
@@ -24,7 +24,7 @@ Der Dienst Auth0 vereinfacht die Anmeldung an sozialen Netzwerken, die von Onlin
 ## <a name="prerequisites"></a>Voraussetzungen
 
 * Ein Konto mit [Auth0](https://auth0.com)
-* Word 2016 für Windows, Build 16.0.6727.1000 oder höher
+* Word 2016 für Windows, Build 16.0.6727.1000 oder höher.
 * [Node und npm](https://nodejs.org/en/) Das Projekt ist so konfiguriert, dass npm als Paket-Manager und für die Taskausführung verwendet wird. Zudem wird Lite Server als der Webserver verwendet, der das Add-In während der Entwicklung hostet, sodass das Add-In schnell betriebsbereit ist. Sie können jedoch auch eine andere Taskausführung oder einen anderen Webserver verwenden.
 * [Git Bash](https://git-scm.com/downloads) (Oder ein anderer Git-Client.)
 
@@ -44,7 +44,7 @@ Legen Sie das Zertifikat als vertrauenswürdige Stammzertifizierungsstelle fest.
 4. Wählen Sie **Vertrauenswürdige Stammzertifizierungsstellen** und dann **OK**. 
 5. Wählen Sie **Weiter** und dann **Fertig stellen**. 
 
-## <a name="create-an-auth0-account-and-configure-it-to-use-google-facebook-and-microsoft-account"></a>Erstellen eines Auth0-Kontos und Konfigurieren des Kontos für die Verwendung von Google, Facebook und Microsoft-Konto
+## <a name="create-an-auth0-account-and-configure-it-to-use-google-facebook-and-microsoft-account"></a>Erstellen eines Auth0-Kontos und Konfigurieren des Kontos für die Verwendung von Google-, Facebook- und Microsoft-Konten
 
 Unter Umständen kann sich die Benutzeroberfläche und Terminologie von Auth0 ändern, nachdem diese Infodatei veröffentlicht wurde. Wir haben versucht, möglichst wenige Annahmen über die Benutzeroberfläche zu machen, aber ggf. können Sie den folgenden Schritten entnehmen, was zu tun ist, und dann die Auth0-Hilfe zu Rate ziehen.
 
@@ -69,7 +69,7 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 
 Jetzt müssen Sie Microsoft Word mitteilen, wo es das Add-In finden kann.
 
-1. Erstellen Sie eine Netzwerkfreigabe, oder [Geben Sie einen Ordner im Netzwerk frei](https://technet.microsoft.com/en-us/library/cc770880.aspx).
+1. Erstellen Sie eine Netzwerkfreigabe, oder [Geben Sie einen Ordner im Netzwerk frei](https://technet.microsoft.com/de-de/library/cc770880.aspx).
 2. Kopieren Sie die Manifestdatei „Office-Add-in-Auth0.xml“ aus dem Stammordner des Projekts in den freigegebenen Ordner.
 3. Starten Sie Word, und öffnen Sie ein Dokument.
 4. Klicken Sie auf die Registerkarte **Datei**, und klicken Sie dann auf **Optionen**.
@@ -96,7 +96,7 @@ Jetzt müssen Sie Microsoft Word mitteilen, wo es das Add-In finden kann.
 ## <a name="start-the-add-in"></a>Starten des Add-Ins
 
 1. Starten Sie Word neu, und öffnen Sie ein Word-Dokument.
-2. Klicken Sie auf der Registerkarte **Einfügen** in Word 2016 auf **Meine-Add-Ins**.
+2. Klicken Sie auf der Registerkarte **Einfügen** in Word 2016 auf **Meine-Add-Ins**. (Möglicherweise befindet sich die Schaltfläche auf der Registerkarte **Entwickler** anstatt der Registerkarte **Einfügen**. Um die Registerkarte **Entwickler** sichtbar zu machen, folgen Sie [diesen Anweisungen](https://support.office.com/de-de/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45).) 
 3. Klicken Sie auf die Registerkarte **FREIGEGEBENER ORDNER**.
 4. Wählen Sie **Authentifizierung mit Auth0** und dann **OK**.
 5. Wenn Add-In-Befehle von Ihrer Word-Version unterstützt werden, werden Sie in der Benutzeroberfläche darüber informiert, dass das Add-In geladen wurde.
@@ -119,8 +119,8 @@ Fragen zur Microsoft Office 365-Entwicklung sollten in [Stack Overflow](http://s
 
 ## <a name="additional-resources"></a>Zusätzliche Ressourcen
 
-* 
-  [Dokumentation zu Office-Add-Ins](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
+* 
+  [Dokumentation zu Office-Add-Ins](https://msdn.microsoft.com/de-de/library/office/jj220060.aspx)
 * [Office Dev Center](http://dev.office.com/)
 * Weitere Office-Add-In-Beispiele unter [OfficeDev auf Github](https://github.com/officedev)
 
