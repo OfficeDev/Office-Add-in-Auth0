@@ -24,8 +24,8 @@ Auth0 服务可简化使用在线服务（例如 Facebook、Google 和 Microsoft
 ## <a name="prerequisites"></a>先决条件
 
 * 可使用 [Auth0](https://auth0.com) 服务的帐户
-* Word 2016 for Windows，内部版本 16.0.6727.1000 或更高版本。
-* [节点和 npm](https://nodejs.org/en/) 将项目配置为使用 npm 作为程序包管理器和任务运行程序。还可以配置为将 Lite Server 用作开发期间可托管外接程序的 Web 服务器，以便快速启动并运行外接程序。欢迎使用其他任务运行程序或 Web 服务器。
+* Word 2016 for Windows（内部版本 16.0.6727.1000 或更高版本）。
+* [节点和 npm](https://nodejs.org/en/) 将项目配置为使用 npm 作为程序包管理器和任务运行程序。还可以配置为将 Lite Server 用作开发期间可托管外接程序的 Web 服务器，以便快速启动并运行外接程序。你完全可以使用其他任务运行程序或 Web 服务器。
 * [Git Bash](https://git-scm.com/downloads)（或其他 git 客户端）。
 
 ## <a name="configure-the-project"></a>配置项目
@@ -69,21 +69,21 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 
 现在需要让 Microsoft Word 知道在哪里可以找到外接程序。
 
-1. 创建网络共享，或[将文件夹共享到网络](https://technet.microsoft.com/en-us/library/cc770880.aspx)。
+1. 创建网络共享，或[将文件夹共享到网络](https://technet.microsoft.com/zh-cn/library/cc770880.aspx)。
 2. 将 Office-Add-in-Auth0.xml 清单文件从项目根目录复制到共享文件夹。
 3. 启动 Word，然后打开一个文档。
 4. 选择**文件**选项卡，然后选择**选项**。
 5. 选择**信任中心**，然后选择**信任中心设置**按钮。
 6. 选择“**受信任的外接程序目录**”。
 7. 在“**目录 URL**”字段中，输入包含 Office-Add-in-Auth0.xml 的文件夹共享的网络路径，然后选择“**添加目录**”。
-8. 选择“**显示在菜单中**”复选框，然后选择“**确定**”。
+8. 选中“**显示在菜单中**”复选框，然后选择“**确定**”。
 9. 随后会出现一条消息，告知你下次启动 Microsoft Office 时将应用你的设置。关闭 Word。
 
 ## <a name="run-the-project"></a>运行项目
 
-1. 打开项目文件夹中的节点命令窗口，然后运行 ```npm start``` 来启动 Web 服务。让命令窗口一直处于打开状态。
+1. 打开项目文件夹中的节点命令窗口，然后运行 ```npm start``` 来启动 Web 服务。使命令窗口保持打开状态。
 2. 打开 Internet Explorer 或 Edge，然后在地址框中输入 ```https://localhost:3000```。如果未收到有关证书的任何警告，则关闭浏览器，然后继续执行下面的“**启动外接程序**”部分。如果看到提示证书不受信任的警告，请继续按以下步骤操作：
-3. 尽管是警告，浏览器也会提供页面打开链接。打开该页面。
+3. 除警告外，浏览器还会提供一个可以打开该页面的链接。打开该页面。
 4. 打开页面后，地址栏中会有一条显示为红色的证书错误消息。双击此错误。
 5. 选择“**查看证书**”。
 5. 选择“**安装证书**”。
@@ -96,15 +96,15 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 ## <a name="start-the-add-in"></a>启动外接程序
 
 1. 重新启动 Word 并打开一个 Word 文档。
-2. 在 Word 2016 中的“**插入**”选项卡上，选择“**我的外接程序**”。
+2. 在 Word 2016 的“**插入**”选项卡中，选择“**我的加载项**”。（按钮可能位于“**开发人员**”选项卡而不是“**插入**”选项卡上。若要使“**开发人员**”选项卡可见，请参阅[以下说明](https://support.office.com/zh-cn/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45)。）
 3. 选择“**共享文件夹**”选项卡。
 4. 选择“** Auth0 进行身份验证**”，然后选择“**确定**”。
 5. 如果 Word 版本支持外接程序命令，UI 将通知你已加载外接程序。
-6. 主页功能区上有一个名为“**Auth0**”的新组，包含标记为“**显示**”的按钮和一个图标。 单击此按钮，打开加载项。
+6. 主页功能区上有一个名为“**Auth0**”的新组，包含标记为“**显示**”的按钮和一个图标。单击该按钮，打开此外接程序。
 
  > 注意：如果你的 Word 版本不支持外接程序命令，则外接程序将在任务窗格中加载。
 
-## <a name="test-the-add-in"></a>测试加载项
+## <a name="test-the-add-in"></a>测试外接程序
 
 1. 外接程序打开时显示欢迎页面。单击“**登录**”按钮。
 2. 弹出窗口将打开，系统会提示选择标识提供程序。单击其中一个按钮。 
@@ -119,13 +119,13 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 
 ## <a name="additional-resources"></a>其他资源
 
-* 
-  [Office 外接程序文档](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
+* 
+  [Office 外接程序文档](https://msdn.microsoft.com/zh-cn/library/office/jj220060.aspx)
 * [Office 开发人员中心](http://dev.office.com/)
 * 有关更多 Office 外接程序示例，请访问 [Github 上的 OfficeDev](https://github.com/officedev)。
 
 ## <a name="copyright"></a>版权
-版权所有 (c) 2016 Microsoft Corporation。保留所有权利。
+版权所有 © 2016 Microsoft Corporation。保留所有权利。
 
 
 

@@ -1,6 +1,6 @@
 # <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>Complemento de Office que usa el servicio de Auth0 para simplificar el inicio de sesión social
 
-El servicio de Auth0 simplifica el proceso de usar el inicio de sesión social que se proporciona mediante servicios en línea como Facebook, Google y Microsoft. En este ejemplo se muestra cómo usar Auth0 en un complemento de Office. 
+El servicio Auth0 simplifica el proceso de usar el inicio de sesión social que se proporciona con servicios en línea, como Facebook, Google y Microsoft. En este ejemplo se muestra cómo usar Auth0 en un complemento de Office. 
 
 ## <a name="table-of-contents"></a>Tabla de contenido
 * [Historial de cambios](#change-history)
@@ -25,7 +25,7 @@ El servicio de Auth0 simplifica el proceso de usar el inicio de sesión social q
 
 * Una cuenta con [Auth0](https://auth0.com)
 * Word 2016 para Windows, compilación 16.0.6727.1000 o posterior.
-* [Nodo y npm](https://nodejs.org/en/) El proyecto está configurado para usar npm como un administrador de paquetes y un ejecutador de tareas. También está configurado para usar Lite Server como el servidor web que hospedará el complemento durante el desarrollo, de forma que tenga el complemento en funcionamiento rápidamente. Puede usar otro ejecutador de tareas o servidor web.
+* [Node y npm](https://nodejs.org/en/) El proyecto está configurado para usar npm como un administrador de paquetes y un ejecutor de tareas. También está configurado para usar Lite Server como el servidor web que hospedará el complemento durante el desarrollo, para que tenga el complemento en funcionamiento rápidamente. Puede usar otro ejecutor de tareas o servidor web.
 * [Git Bash](https://git-scm.com/downloads) (U otro cliente de Git).
 
 ## <a name="configure-the-project"></a>Configurar el proyecto
@@ -46,11 +46,11 @@ Establezca el certificado para que sea una entidad de certificación raíz de co
 
 ## <a name="create-an-auth0-account-and-configure-it-to-use-google-facebook-and-microsoft-account"></a>Crear una cuenta de Auth0 y configurarla para usar Facebook, Google y una cuenta de Microsoft
 
-Auth0 puede cambiar su interfaz de usuario, y la terminología, después de que se publique este archivo Léame. Hemos intentado realizar tan pocas suposiciones como fuera posible sobre la interfaz de usuario, pero si lo necesita, puede usar estos pasos para obtener la esencia principal de lo que necesita realizarse y, después, usar la ayuda de Auth0 para obtener instrucciones.
+Auth0 puede cambiar su interfaz de usuario y la terminología después de que se publique este archivo Léame. Hemos intentado realizar la menor cantidad posible de suposiciones sobre la interfaz de usuario, pero si lo necesita, puede usar estos pasos para tener una idea general de lo que se necesita hacer y, después, usar la ayuda de Auth0 para obtener instrucciones.
 
 1. En su panel de Auth0, cree una cuenta (o puede usar una existente). Se le solicitará que elija un nombre de cuenta que le servirá como subdominio en auth0.com con el que interactuará su complemento; por ejemplo, `officeaddin.auth0.com`. Anote este nombre.
-2. Cuando se le solicite elegir proveedores, seleccione Facebook, Google y cuenta Microsoft. Este ejemplo no usa ningún otro, por lo que deshabilite los demás que están habilitados de manera predeterminada, incluida la opción **base de datos** (o **Autenticación de nombre de usuario y contraseña**). Puede cambiar esta configuración más tarde si quiere ampliar el ejemplo a otros proveedores.
-3. Auth0 crea una **aplicación predeterminada** (también denominada un **cliente**) en la cuenta. Vaya a **Configuración** en esta aplicación.
+2. Cuando se le solicite elegir proveedores, seleccione Facebook, Google y cuenta de Microsoft. Este ejemplo no usa ningún otro, por lo que deshabilite los demás que están habilitados de manera predeterminada, incluida la opción **base de datos** (o **Autenticación de nombre de usuario y contraseña**). Puede cambiar esta configuración más tarde si quiere ampliar el ejemplo a otros proveedores.
+3. Auth0 crea una **Aplicación predeterminada** (también denominada un **Cliente**) en la cuenta. Vaya a **Configuración** en esta aplicación.
 4. Anote el identificador de cliente para usarlo en un paso posterior.
 5. En **Tipo de cliente**, elija **Single Page Application (Aplicación de página única)**. 
 6. En **Allowed Callbacks (Devoluciones de llamada permitidas)**, escriba `https://localhost:3000/popupRedirect.html`.
@@ -69,22 +69,22 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 
 Ahora debe indicarle a Microsoft Word dónde encontrar el complemento.
 
-1. Cree un recurso compartido de red o [comparta una carpeta en la red](https://technet.microsoft.com/en-us/library/cc770880.aspx).
+1. Cree un recurso compartido de red o [comparta una carpeta en la red](https://technet.microsoft.com/es-es/library/cc770880.aspx).
 2. Coloque una copia del archivo de manifiesto Office-Add-in-Auth0.xml, desde la raíz del proyecto, en la carpeta compartida.
 3. Inicie Word y abra un documento.
 4. Seleccione la pestaña **Archivo** y haga clic en **Opciones**.
 5. Haga clic en **Centro de confianza** y seleccione el botón **Configuración del Centro de confianza**.
 6. Elija **Catálogos de complementos de confianza**.
 7. En el campo **Dirección URL del catálogo**, escriba la ruta de red al recurso compartido de carpeta que contiene Office-Add-in-Auth0.xml y, después, elija **Agregar catálogo**.
-8. Active la casilla **Mostrar en el menú** y elija **Aceptar**.
-9. Aparecerá un mensaje para informarle de que la configuración se aplicará la próxima vez que inicie Microsoft Office. Cierre Word.
+8. Seleccione la casilla **Mostrar en menú** y, luego, elija **Aceptar**.
+9. Aparecerá un mensaje para informarle que la configuración se aplicará la próxima vez que inicie Microsoft Office. Cierre Word.
 
 ## <a name="run-the-project"></a>Ejecutar el proyecto
 
-1. Abra una ventana Comandos de nodo en la carpeta del proyecto y ejecute ```npm start``` para iniciar el servicio web. Deje abierta la ventana Comandos.
-2. Abra Internet Explorer o Edge y escriba ```https://localhost:3000``` en el cuadro de dirección. Si no recibe ninguna advertencia sobre el certificado, cierre el explorador y siga con la sección siguiente titulada **Iniciar el complemento**. Si se muestra una advertencia que indica que el certificado no es de confianza, siga estos pasos:
+1. Abra una ventana Comandos de node en la carpeta del proyecto y ejecute ```npm start``` para iniciar el servicio web. Deje abierta la ventana Comandos.
+2. Abra Internet Explorer o Microsoft Edge y escriba ```https://localhost:3000``` en el cuadro de dirección. Si no recibe ninguna advertencia sobre el certificado, cierre el explorador y siga con la sección siguiente titulada **Iniciar el complemento**. Si recibe una advertencia que indica que el certificado no es de confianza, siga estos pasos:
 3. El explorador le proporciona un vínculo para abrir la página a pesar de la advertencia. Ábralo.
-4. Después de que se abra la página, habrá un error de certificado rojo en la barra de direcciones. Haga doble clic en el error.
+4. Después de que se abra la página, aparecerá un error de certificado rojo en la barra de direcciones. Haga doble clic en el error.
 5. Seleccione **Ver certificado**.
 5. Seleccione **Instalar certificado**.
 4. Seleccione **Máquina local** y **Siguiente** para continuar. 
@@ -96,8 +96,8 @@ Ahora debe indicarle a Microsoft Word dónde encontrar el complemento.
 ## <a name="start-the-add-in"></a>Iniciar el complemento
 
 1. Reinicie Word y abra un documento de Word.
-2. En la pestaña **Insertar** de Word 2016, elija **Mis complementos**.
-3. Seleccione la pestaña **Carpeta compartida**.
+2. En la pestaña **Insertar** de Word 2016, elija **Mis complementos**. (El botón puede encontrarse en la pestaña **Programador** en lugar de la pestaña **Insertar**. Para que la pestaña **Programador** sea visible, vea [estas instrucciones](https://support.office.com/es-es/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45)).
+3. Seleccione la pestaña **CARPETA COMPARTIDA**.
 4. Elija **Authenticate with Auth0 (Autenticar con Auth0)** y, después, seleccione **Aceptar**.
 5. Si su versión de Word admite los comandos de complemento, la interfaz de usuario le informará de que se ha cargado el complemento.
 6. En la cinta de opciones de Inicio es un nuevo grupo denominado **Auth0** con un botón llamado **Mostrar** y un icono. Haga clic en ese botón para abrir el complemento.
@@ -115,12 +115,12 @@ Ahora debe indicarle a Microsoft Word dónde encontrar el complemento.
 
 Nos encantaría recibir sus comentarios sobre este ejemplo. Puede enviarnos comentarios a través de la sección *Problemas* de este repositorio.
 
-Las preguntas generales sobre el desarrollo de Microsoft Office 365 deben publicarse en [Desbordamiento de pila](http://stackoverflow.com/questions/tagged/office-js+API). Si su pregunta trata sobre las API de JavaScript para Office, asegúrese de que su pregunta se etiqueta con [office-js] y [API].
+Las preguntas generales sobre el desarrollo de Microsoft Office 365 deben publicarse en [Stack Overflow](http://stackoverflow.com/questions/tagged/office-js+API). Si su pregunta trata sobre las API de JavaScript para Office, asegúrese de que se etiqueta con [office-js] y [API].
 
 ## <a name="additional-resources"></a>Recursos adicionales
 
-* 
-  [Documentación de complementos de Office](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
+* 
+  [Documentación de complementos de Office](https://msdn.microsoft.com/es-es/library/office/jj220060.aspx)
 * [Centro de desarrollo de Office](http://dev.office.com/)
 * Más ejemplos de complementos de Office en [OfficeDev en GitHub](https://github.com/officedev)
 
