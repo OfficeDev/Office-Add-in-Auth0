@@ -25,7 +25,7 @@ O serviço Auth0 simplifica o processo de uso do login social fornecido por serv
 
 * Uma conta com [Auth0](https://auth0.com)
 * Word 2016 para Windows, build 16.0.6727.1000 ou superior.
-* [Nó e npm](https://nodejs.org/en/) Configuramos o projeto para usar npm como gerenciador de pacotes e executor de tarefas. É possível configurá-lo também para usar o Lite Server como o servidor Web que hospedará o suplemento durante o desenvolvimento, de modo que você possa começar a usar o suplemento rapidamente. Você também pode usar outro executor de tarefas ou servidor Web.
+* [Node e npm](https://nodejs.org/en/) Configuramos o projeto para usar npm como gerenciador de pacotes e executor de tarefas. Também o configuramos para usar o Lite Server como o servidor Web que hospedará o suplemento durante o desenvolvimento, de modo que você possa começar a usar o suplemento rapidamente. Você também pode usar outro executor de tarefas ou servidor Web.
 * [Git Bash](https://git-scm.com/downloads) (ou outro cliente Git.)
 
 ## <a name="configure-the-project"></a>Configurar o projeto
@@ -69,15 +69,15 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 
 Agora, você precisa informar ao Microsoft Word onde encontrar o suplemento.
 
-1. Crie um compartilhamento de rede ou [compartilhe uma pasta na rede](https://technet.microsoft.com/en-us/library/cc770880.aspx).
+1. Crie um compartilhamento de rede ou [compartilhe uma pasta na rede](https://technet.microsoft.com/pt-br/library/cc770880.aspx).
 2. Coloque uma cópia do arquivo de manifesto Office-Add-in-Auth0.xml na raiz do projeto, dentro da pasta compartilhada.
 3. Inicie o Word e abra um documento.
 4. Escolha a guia **Arquivo** e escolha **Opções**.
 5. Escolha **Central de Confiabilidade**, e escolha o botão **Configurações da Central de Confiabilidade**.
 6. Escolha **Catálogos de Suplementos Confiáveis**.
 7. No campo **URL do Catálogo**, insira o caminho de rede para o compartilhamento de pasta que contém o arquivo Office-Add-in-Auth0.xml e escolha **Adicionar catálogo**.
-8. Selecione a caixa de seleção **Mostrar no Menu** e escolha **OK**.
-9. O sistema exibirá uma mensagem para informá-lo de que suas configurações serão aplicadas na próxima vez que você iniciar o Microsoft Office. Feche o Word.
+8. Selecione a caixa de seleção **Mostrar no Menu** e depois escolha **OK**.
+9. O sistema exibirá uma mensagem para informar que suas configurações serão aplicadas na próxima vez que você iniciar o Microsoft Office. Feche o Word.
 
 ## <a name="run-the-project"></a>Executar o projeto
 
@@ -96,8 +96,8 @@ Agora, você precisa informar ao Microsoft Word onde encontrar o suplemento.
 ## <a name="start-the-add-in"></a>Iniciar o suplemento
 
 1. Inicie novamente o Word e abra um documento.
-2. Na guia **Inserir** no Word 2016, escolha **Meus Suplementos**.
-3. Selecione a guia **Pasta compartilhada**.
+2. Na guia **Inserir** no Word 2016, escolha **Meus Suplementos**. (Pode ser que o botão esteja na guia **Desenvolvedor**e não em **Inserir**. Para tornar a guia **Desenvolvedor** visível, confira [estas instruções](https://support.office.com/pt-br/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45).)
+3. Selecione a guia **PASTA COMPARTILHADA**.
 4. Escolha **Autenticar com Auth0** e, em seguida, **OK**.
 5. Se os comandos de suplemento forem compatíveis com sua versão do Word, a interface do usuário informará que o suplemento foi carregado.
 6. Na Faixa de Opções da Página Inicial, há um novo grupo chamado **Auth0** com um botão **Mostrar** e um ícone. Clique no botão para abrir o suplemento.
@@ -113,20 +113,20 @@ Agora, você precisa informar ao Microsoft Word onde encontrar o suplemento.
 
 ## <a name="questions-and-comments"></a>Perguntas e comentários
 
-Gostaríamos de saber sua opinião sobre este exemplo. Você pode nos enviar comentários na seção *Issues* deste repositório.
+Gostaríamos de saber sua opinião sobre este exemplo. Você pode nos enviar comentários na seção *Problemas* deste repositório.
 
 As perguntas sobre o desenvolvimento do Microsoft Office 365 em geral devem ser postadas no [Stack Overflow](http://stackoverflow.com/questions/tagged/office-js+API). Se sua pergunta estiver relacionada às APIs JavaScript para Office, não deixe de marcá-la com as tags [office-js] e [API].
 
 ## <a name="additional-resources"></a>Recursos adicionais
 
-* 
-  [Documentação dos suplementos do Office](https://msdn.microsoft.com/en-us/library/office/jj220060.aspx)
+* 
+  [Documentação dos suplementos do Office](https://msdn.microsoft.com/pt-br/library/office/jj220060.aspx)
 * [Centro de Desenvolvimento do Office](http://dev.office.com/)
 * Confira outros exemplos de Suplemento do Office em [OfficeDev no Github](https://github.com/officedev)
 
-## <a name="copyright"></a>Copyright
-Copyright (c) 2016 Microsoft Corporation. Todos os direitos reservados.
+## <a name="copyright"></a>Direitos autorais
+Copyright (C) 2016 Microsoft Corporation. Todos os direitos reservados.
 
 
 
-Este projeto adotou o [Código de Conduta de Software Livre da Microsoft](https://opensource.microsoft.com/codeofconduct/). Para saber mais, confira as [Perguntas frequentes sobre o Código de Conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou contate [opencode@microsoft.com](mailto:opencode@microsoft.com) se tiver outras dúvidas ou comentários.
+Este projeto adotou o [Código de Conduta de Software Livre da Microsoft](https://opensource.microsoft.com/codeofconduct/). Saiba mais nas [Perguntas frequentes sobre o Código de Conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou contate [opencode@microsoft.com](mailto:opencode@microsoft.com) se tiver outras dúvidas ou comentários.
