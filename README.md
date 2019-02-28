@@ -1,4 +1,17 @@
-# Office Add-in that uses the Auth0 Service to Simplify Social Login
+---
+topic: sample
+products:
+- Word
+- Office 365
+languages:
+- JavaScript
+extensions:
+  contentType: samples
+  technologies:
+  - Add-ins
+  createdDate: 9/1/2016 3:14:40 PM
+---
+# [ARCHIVED] Office Add-in that uses the Auth0 Service to Simplify Social Login
 
 The Auth0 service simplifies the process of using social login provided by online services such as Facebook, Google, and Microsoft. This sample shows how to use Auth0 in an Office add-in. 
 
@@ -96,7 +109,7 @@ Now you need to let Microsoft Word know where to find the add-in.
 ## Start the add-in
 
 1. Restart Word and open a Word document.
-2. On the **Insert** tab in Word 2016, choose **My Add-ins**.
+2. On the **Insert** tab in Word 2016, choose **My Add-ins**. (The button may be on the **Developer** tab instead of the **Insert** tab. To make the **Developer** tab visible, see [these instructions](https://support.office.com/en-us/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45).)
 3. Select the **SHARED FOLDER** tab.
 4. Choose **Authenticate with Auth0**, and then select **OK**.
 5. If add-in commands are supported by your version of Word, the UI will inform you that the add-in was loaded.
@@ -126,3 +139,6 @@ Questions about Microsoft Office 365 development in general should be posted to 
 ## Copyright
 Copyright (c) 2016 Microsoft Corporation. All rights reserved.
 
+
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information, see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
