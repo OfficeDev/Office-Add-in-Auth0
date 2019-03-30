@@ -1,4 +1,19 @@
-# <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>Complemento de Office que usa el servicio de Auth0 para simplificar el inicio de sesión social
+---
+topic: sample
+products:
+  - Word
+  - Office 365
+languages:
+  - JavaScript
+extensions:
+  contentType: samples
+  technologies:
+    - Add-ins
+  createdDate: '9/1/2016 3:14:40 PM'
+---
+# <a name="archived-office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>[ARCHIVADO] Complemento de Office que usa el servicio de Auth0 para simplificar el inicio de sesión social
+
+> **Nota**: Este repositorio está archivado y ya no se mantiene de manera activa. Las vulnerabilidades de seguridad pueden existir en el proyecto o en sus dependencias. Si tiene previsto volver a usar o a ejecutar algún código de este repositorio, asegúrese primero de realizar las comprobaciones de seguridad adecuadas en el código o las dependencias. No use este proyecto como punto de partida de un complemento de producción de Office. Inicie siempre el código de producción con la carga de trabajo de desarrollo de Office y SharePoint en Visual Studio, o el [generador de Yeoman para complementos de Office](https://github.com/OfficeDev/generator-office), y siga los procedimientos recomendados de seguridad al elaborar el complemento.
 
 El servicio Auth0 simplifica el proceso de usar el inicio de sesión social que se proporciona con servicios en línea, como Facebook, Google y Microsoft. En este ejemplo se muestra cómo usar Auth0 en un complemento de Office. 
 
@@ -96,11 +111,11 @@ Ahora debe indicarle a Microsoft Word dónde encontrar el complemento.
 ## <a name="start-the-add-in"></a>Iniciar el complemento
 
 1. Reinicie Word y abra un documento de Word.
-2. En la pestaña **Insertar** de Word 2016, elija **Mis complementos**. (El botón puede encontrarse en la pestaña **Programador** en lugar de la pestaña **Insertar**. Para que la pestaña **Programador** sea visible, vea [estas instrucciones](https://support.office.com/es-es/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45)).
+2. En la pestaña **Insertar** de Word 2016, elija **Mis complementos**. (El botón puede encontrarse en la pestaña **Programador** en lugar de en la pestaña **Insertar**. Para que la pestaña **Programador** sea visible, vea [estas instrucciones](https://support.office.com/es-es/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45)).
 3. Seleccione la pestaña **CARPETA COMPARTIDA**.
 4. Elija **Authenticate with Auth0 (Autenticar con Auth0)** y, después, seleccione **Aceptar**.
 5. Si su versión de Word admite los comandos de complemento, la interfaz de usuario le informará de que se ha cargado el complemento.
-6. En la cinta de opciones de Inicio es un nuevo grupo denominado **Auth0** con un botón llamado **Mostrar** y un icono. Haga clic en ese botón para abrir el complemento.
+6. En la cinta de opciones de Inicio está el nuevo grupo denominado **Auth0** con un botón llamado **Mostrar** y un icono. Haga clic en ese botón para abrir el complemento.
 
  > Nota: El complemento se cargará en un panel de tareas si los comandos del complemento no son compatibles con su versión de Word.
 

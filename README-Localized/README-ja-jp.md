@@ -1,4 +1,19 @@
-# <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>Auth0 サービスを使用してソーシャル ログインを簡略化する Office アドイン
+---
+topic: sample
+products:
+  - Word
+  - Office 365
+languages:
+  - JavaScript
+extensions:
+  contentType: samples
+  technologies:
+    - Add-ins
+  createdDate: '9/1/2016 3:14:40 PM'
+---
+# <a name="archived-office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>(アーカイブ済み) Auth0 サービスを使用してソーシャル ログインを簡略化する Office アドイン
+
+> **注:** このリポジトリはアーカイブされており、アクティブなメンテナンスは終了しています。 プロジェクトまたはその依存関係にはセキュリティの脆弱性が存在する可能性があります。 このリポジトリのコードを再利用するか、実行することを計画している場合は、必ず最初にコードまたは依存関係に対して適切なセキュリティ チェックを実行してください。 運用 Office アドインの開始点として、このプロジェクトを使わないでください。 運用コードを開始する際は、必ず Visual Studio の Office/SharePoint 開発ワークロードか [Office アドイン用 Yeoman ジェネレーター](https://github.com/OfficeDev/generator-office)を使用するようにし、アドインを開発する際はセキュリティのベスト プラクティスに従ってください。
 
 Auth0 サービスは、Facebook、Google、Microsoft などのオンライン サービスで提供されるソーシャル ログインを使用するプロセスを簡略化します。 このサンプルでは、Office アドインで Auth0 を使用する方法を示します。 
 
@@ -102,7 +117,7 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 5. ご使用の Word バージョンでアドイン コマンドがサポートされている場合、UI によってアドインが読み込まれたことが通知されます。
 6. [ホーム] では、リボンは **Auth0** と呼ばれる新しいグループであり、**[表示する]** というラベル付きのボタンとアイコンが用意されています。そのボタンをクリックして、アドインを開きます。
 
- > 注:アドイン コマンドが Word バージョンによってサポートされていない場合は、アドインが作業ウィンドウに読み込まれます。
+ > 注: アドイン コマンドが Word バージョンによってサポートされていない場合は、アドインが作業ウィンドウに読み込まれます。
 
 ## <a name="test-the-add-in"></a>アドインをテストする
 

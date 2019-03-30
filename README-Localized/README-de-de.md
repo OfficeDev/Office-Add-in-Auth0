@@ -1,4 +1,19 @@
-# <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>Office-Add-In, das den Dienst Auth0 zur vereinfachten Anmeldung an sozialen Netzwerken verwendet
+---
+topic: sample
+products:
+  - Word
+  - Office 365
+languages:
+  - JavaScript
+extensions:
+  contentType: samples
+  technologies:
+    - Add-ins
+  createdDate: '9/1/2016 3:14:40 PM'
+---
+# <a name="archived-office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>[ARCHIVIERT] Office-Add-In, das den Dienst Auth0 zur vereinfachten Anmeldung an sozialen Netzwerken verwendet
+
+> **Hinweis:** Dieses Repository wurde archiviert und wird nicht mehr aktualisiert. Das Projekt oder seine Abhängigkeiten enthalten möglicherweise Sicherheitsrisiken. Wenn Sie beabsichtigen, dieses Repository wiederzuverwenden oder darin enthaltenen Code auszuführen, führen Sie bitte zuerst angemessene Sicherheitsprüfungen des Codes oder der Abhängigkeiten durch. Verwenden Sie dieses Projekt nicht als Ausgangspunkt zum Erstellen eines Office-Add-Ins für die Produktionsumgebung. Beginnen Sie die Erstellung von Produktionscode immer mit dem Entwicklungsworkload für Office/SharePoint in Visual Studio oder mit dem [Yeoman-Generator für Office-Add-Ins](https://github.com/OfficeDev/generator-office), und befolgen Sie bei der Entwicklung des Add-Ins die bewährten Methoden für die Sicherheit.
 
 Der Dienst Auth0 vereinfacht die Anmeldung über soziale Netzwerke, die von Onlinediensten wie Facebook, Google und Microsoft bereitgestellt wird. Dieses Beispiel zeigt die Verwendung von Auth0 in einem Office-Add-In. 
 
@@ -100,7 +115,7 @@ Jetzt müssen Sie Microsoft Word mitteilen, wo es das Add-In finden kann.
 3. Klicken Sie auf die Registerkarte **FREIGEGEBENER ORDNER**.
 4. Wählen Sie **Authentifizierung mit Auth0** und dann **OK**.
 5. Wenn Add-In-Befehle von Ihrer Word-Version unterstützt werden, werden Sie in der Benutzeroberfläche darüber informiert, dass das Add-In geladen wurde.
-6. Das Startmenüband enthält eine neue Gruppe namens **Auth0** mit einer Schaltfläche mit der Bezeichnung **Anzeigen** und einem Symbol. Klicken Sie auf diese Schaltfläche, um das Add-In zu öffnen.
+6. Das Startmenüband enthält eine neue Gruppe namens **Auth0** mit der Schaltfläche **Show** und einem Symbol. Klicken Sie auf diese Schaltfläche, um das Add-In zu öffnen.
 
  > Hinweis: Das Add-In wird in einem Aufgabenbereich geladen, wenn Add-In-Befehle von Ihrer Version von Word nicht unterstützt werden.
 

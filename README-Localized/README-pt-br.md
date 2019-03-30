@@ -1,4 +1,19 @@
-# <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>Suplemento do Office que usa o serviço Auth0 para facilitar o login social
+---
+topic: sample
+products:
+  - Word
+  - Office 365
+languages:
+  - JavaScript
+extensions:
+  contentType: samples
+  technologies:
+    - Add-ins
+  createdDate: '9/1/2016 3:14:40 PM'
+---
+# <a name="archived-office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>[ARQUIVADO] Suplemento do Office que usa o serviço Auth0 para facilitar o login social
+
+> **Observação:** Este repositório foi arquivado e não é mais ativamente mantido. Podem existir vulnerabilidades de segurança no projeto ou em suas dependências. Caso pretenda reutilizar ou executar qualquer código deste repositório, certifique-se de executar primeiro verificações de segurança apropriadas no código ou nas dependências. Não use esse projeto como ponto de partida de produção de suplementos do Office. Sempre inicie seu código de produção usando a carga de trabalho de desenvolvimento do Office/SharePoint no Visual Studio ou no [gerador do Yeoman para suplementos do Office](https://github.com/OfficeDev/generator-office) e siga as melhores práticas de segurança ao desenvolver o suplemento.
 
 O serviço Auth0 simplifica o processo de uso do login social fornecido por serviços online, como as plataformas Facebook, Google e Microsoft. O exemplo a seguir mostra como usar Auth0 em um suplemento do Office. 
 
@@ -95,12 +110,12 @@ Agora, você precisa informar ao Microsoft Word onde encontrar o suplemento.
 
 ## <a name="start-the-add-in"></a>Iniciar o suplemento
 
-1. Inicie novamente o Word e abra um documento.
-2. Na guia **Inserir** no Word 2016, escolha **Meus Suplementos**. (Pode ser que o botão esteja na guia **Desenvolvedor**e não em **Inserir**. Para tornar a guia **Desenvolvedor** visível, confira [estas instruções](https://support.office.com/pt-br/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45).)
+1. Reinicie o Word e abra um documento.
+2. Na guia **Inserir** no Word 2016, escolha **Meus Suplementos**. (Pode ser que o botão esteja na guia **Desenvolvedor**e não em **Inserir**. Para tornar a guia **Desenvolvedor** visível, confira [estas instruções](https://support.office.com/pt-br/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45)).
 3. Selecione a guia **PASTA COMPARTILHADA**.
 4. Escolha **Autenticar com Auth0** e, em seguida, **OK**.
 5. Se os comandos de suplemento forem compatíveis com sua versão do Word, a interface do usuário informará que o suplemento foi carregado.
-6. Na Faixa de Opções da Página Inicial, há um novo grupo chamado **Auth0** com um botão **Mostrar** e um ícone. Clique no botão para abrir o suplemento.
+6. Na Faixa de Opções da Página Inicial, há um novo grupo chamado **Auth0** com um botão **Exibir** e um ícone. Clique no botão para abrir o suplemento.
 
  > Observação: O suplemento será carregado no painel de tarefas se os comandos de suplemento não forem compatíveis com sua versão do Word.
 

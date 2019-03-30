@@ -1,4 +1,19 @@
-# <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>使用 Auth0 服务简化社交登录的 Office 外接程序
+---
+topic: sample
+products:
+  - Word
+  - Office 365
+languages:
+  - JavaScript
+extensions:
+  contentType: samples
+  technologies:
+    - Add-ins
+  createdDate: '9/1/2016 3:14:40 PM'
+---
+# <a name="archived-office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>[已存档] 使用 Auth0 服务简化社交登录的 Office 外接程序
+
+> **注意：** 此存储库已存档，不再主动维护。 项目或其依赖项中可能存在安全漏洞。 如果计划从此存储库重用或运行任何代码，请务必首先对代码或依赖项执行适当的安全检查。 请勿将此项目用作生产 Office 外接程序的起点。 始终使用 Visual Studio 中的 Office/SharePoint 开发工作负载或 [Office 外接程序的 Yeoman 生成器](https://github.com/OfficeDev/generator-office)启动生产代码，并在开发外接程序时遵循安全最佳做法。
 
 Auth0 服务可简化使用在线服务（例如 Facebook、Google 和 Microsoft）提供的社交登录名过程。 本示例介绍如何在 Office 外接程序中使用 Auth0。 
 
@@ -96,7 +111,7 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 ## <a name="start-the-add-in"></a>启动外接程序
 
 1. 重新启动 Word 并打开一个 Word 文档。
-2. 在 Word 2016 的“**插入**”选项卡中，选择“**我的加载项**”。（按钮可能位于“**开发人员**”选项卡而不是“**插入**”选项卡上。若要使“**开发人员**”选项卡可见，请参阅[以下说明](https://support.office.com/zh-cn/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45)。）
+2. 在 Word 2016 的“**插入**”选项卡中，选择“**我的外接程序**”。（按钮可能位于“**开发人员**”选项卡而不是“**插入**”选项卡上。若要使“**开发人员**”选项卡可见，请参阅[以下说明](https://support.office.com/zh-cn/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45)。）
 3. 选择“**共享文件夹**”选项卡。
 4. 选择“** Auth0 进行身份验证**”，然后选择“**确定**”。
 5. 如果 Word 版本支持外接程序命令，UI 将通知你已加载外接程序。

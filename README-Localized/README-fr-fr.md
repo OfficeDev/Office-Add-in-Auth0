@@ -1,4 +1,19 @@
-# <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>Complément Office qui utilise le service Auth0 pour simplifier la connexion sociale
+---
+topic: sample
+products:
+  - Word
+  - Office 365
+languages:
+  - JavaScript
+extensions:
+  contentType: samples
+  technologies:
+    - Add-ins
+  createdDate: '9/1/2016 3:14:40 PM'
+---
+# <a name="archived-office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>[ARCHIVÉ] Un complément Office utilise le service Auth0 pour simplifier la connexion aux réseaux sociaux
+
+> **Remarque :** ce référentiel est archivé et n’est plus activement conservé. Des failles de sécurité peuvent exister dans le projet ou ses dépendances. Si vous envisagez de réutiliser ou d’exécuter du code issu de ce référentiel, veillez à effectuer les vérifications de sécurité appropriées sur le code ou les dépendances en premier. N’utilisez pas ce projet comme point de départ d’un complément Office de production. Commencez toujours votre code de production à l’aide de la charge de travail de développement Office/SharePoint dans Visual Studio, ou le [générateur Yeoman de compléments Office](https://github.com/OfficeDev/generator-office), puis suivez les meilleures pratiques de sécurité lorsque vous développez le complément.
 
 Le service Auth0 simplifie le processus d’utilisation de la connexion par le biais des réseaux sociaux fournie par les services en ligne tels que Facebook, Google et Microsoft. Cet exemple montre comment utiliser Auth0 dans un complément Office. 
 
@@ -96,13 +111,13 @@ Vous devez maintenant indiquer à Microsoft Word où trouver le complément.
 ## <a name="start-the-add-in"></a>Démarrer le complément
 
 1. Redémarrez Word et ouvrez un document Word.
-2. Dans l’onglet **Insertion** de Word 2016, choisissez **Mes compléments**. (Le bouton peut être sur l’onglet **Développeur** au lieu de l’onglet **Insertion**. Pour rendre l’onglet **Développeur** visible, suivez [ces instructions](https://support.office.com/fr-fr/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45).)
+2. Dans l’onglet **Insertion** de Word 2016, choisissez **Mes compléments**. (Le bouton peut apparaître dans l’onglet **Développeur** au lieu de l’onglet **Insertion**. Pour afficher l’onglet **Développeur**, suivez [ces instructions](https://support.office.com/fr-fr/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45).)
 3. Sélectionnez l’onglet **DOSSIER PARTAGÉ**.
 4. Choisissez **Authentifier avec Auth0**, puis sélectionnez **OK**.
-5. Si les commandes de complément sont prises en charge par votre version de Word, l’interface utilisateur vous informe que le complément a été chargé.
-6. Dans le ruban Accueil, un nouveau groupe appelé **Auth0** apparaît avec un bouton intitulé **Afficher** et une icône. Cliquez sur ce bouton pour ouvrir le complément.
+5. Si les commandes du complément sont prises en charge par votre version de Word, l’interface utilisateur vous informe que le complément a été chargé.
+6. Dans le ruban Accueil, un nouveau groupe **Auth0** apparaît avec un bouton **Afficher** et une icône. Cliquez sur ce bouton pour ouvrir le complément.
 
- > Remarque : le complément se charge dans un volet Office si les commandes de complément ne sont pas prises en charge par votre version de Word.
+ > Remarque : Le complément se charge dans un volet Office si les commandes de complément ne sont pas prises en charge par votre version de Word.
 
 ## <a name="test-the-add-in"></a>Test du complément
 

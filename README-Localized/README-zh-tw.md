@@ -1,4 +1,19 @@
-# <a name="office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>使用 Auth0 服務以簡化社交網路帳戶登入的 Office 增益集
+---
+topic: sample
+products:
+  - Word
+  - Office 365
+languages:
+  - JavaScript
+extensions:
+  contentType: samples
+  technologies:
+    - Add-ins
+  createdDate: '9/1/2016 3:14:40 PM'
+---
+# <a name="archived-office-add-in-that-uses-the-auth0-service-to-simplify-social-login"></a>[已封存] 使用 Auth0 服務以簡化社交網路帳戶登入的 Office 增益集
+
+> **注意：** 此 Repo 已封存，不再主動進行維護。 安全性漏洞可能存在專案或其相依專案。 如果您計畫重複使用或執行此Repo 的任何程式碼，請務必對程式碼或其相依程式碼執行適當的安全性檢查。 請勿將此專案當成實際 Office 增益集的起點。 一律使用 Visual Studio 中的 Office/SharePoint 開發工作負載，或是使用 [Office 增益集的 Yeoman 產生器](https://github.com/OfficeDev/generator-office)，開始您的實際程式碼，然後在開發增益集的同時，遵循最佳安全性的作法。
 
 Auth0 服務簡化使用 (如 Facebook、Google 及 Microsoft 等線上服務所提供的) 社交網路帳戶登入的程序。 這個範例會示範如何在 Office 增益集中使用 Auth0。 
 
@@ -96,7 +111,7 @@ Auth0AccountData.clientID = '{Auth0 client ID}';
 ## <a name="start-the-add-in"></a>啟動增益集
 
 1. 重新啟動 Word，並開啟 Word 文件。
-2. 在 Word 2016 的 [插入]**** 索引標籤上，選擇 [我的增益集]****。(按鈕可能會在 [開發人員]**** 索引標籤上，而不是 [插入]**** 索引標籤。若要顯示 [開發人員]**** 索引標籤，請參閱[下列指示](https://support.office.com/zh-tw/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45)。)
+2. 在 Word 2016 的 [插入]**** 索引標籤上，選擇 [我的增益集]**** (按鈕可能會在 [開發人員]**** 索引標籤上，而不是 [插入]**** 索引標籤。若要顯示 [開發人員]**** 索引標籤，請參閱[下列指示](https://support.office.com/zh-tw/article/Show-the-Developer-tab-E1192344-5E56-4D45-931B-E5FD9BEA2D45))。
 3. 選取 [共用資料夾]**** 索引標籤。
 4. 選擇 [以 Auth0 驗證]****，然後選取 [確定]****。
 5. 如果您的 Word 版本支援增益集命令，UI 會通知您已載入增益集。
